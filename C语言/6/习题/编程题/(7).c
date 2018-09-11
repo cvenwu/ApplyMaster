@@ -8,7 +8,7 @@ void main()
 		num2 = i / 10 % 10;
 		num3 = i / 100;
 		if((num3 * num3 * num3 + num2 * num2 * num2 + num1 * num1 * num1) == i)
-			printf("%d\t");
+			printf("%d\t", i);
 	}
 	
 }

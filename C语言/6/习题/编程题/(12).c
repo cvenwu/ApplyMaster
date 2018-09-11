@@ -6,11 +6,11 @@ void main()
 	for(i = 1; i <= n; i++)
 	{
 		
-		for(j = 1; j < n / 2 + 1; j++)
+		for(j = 1; j <= ; j++)
 		{
 			printf(" ");
 		}
-		for(j = 1; j <= 7 - 2 * n; j++)
+		for(j = 1; j <= ; j++)
 		{
 			printf("*");
 		}
