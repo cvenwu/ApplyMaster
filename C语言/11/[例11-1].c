@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-struct score 
+struct score  
 {
 	float grade[5];
 	float avegrade, maxgrade, mingrade; 

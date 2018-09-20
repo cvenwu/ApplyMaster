@@ -18,7 +18,10 @@ struct Student_Info
 	struct Date birthday;
 		
 }; 									//这里最后一定要记得加上分号 
- 
+
+
+typedef int INTEGER;
+
 
 void main()
 {
