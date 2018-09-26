@@ -1,9 +1,6 @@
 #include <stdio.h>
 
 
-
-
-/* 
 struct Stu_Tea
 {
 	char name[10];
@@ -41,4 +38,4 @@ void main()
 	 } 
 	
 	
- } */ 
+ } 
