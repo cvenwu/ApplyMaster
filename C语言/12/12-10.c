@@ -1,3 +1,8 @@
+
+/*文件加密解密*/
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
