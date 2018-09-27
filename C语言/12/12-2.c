@@ -27,7 +27,10 @@ void main(int argc, char *argv[])
 	
 	//复制源文件到目标文件中
 	for( ; (!feof(input)) ; )
-		fputc()
+		fputc(fgetc(input), output);
+	
+	fclose(input);									//关闭源文件 
+	fclose(output);									//关闭目标文件 
 	
 	
 }
