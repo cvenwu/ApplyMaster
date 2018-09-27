@@ -30,5 +30,8 @@ void main(int argc, char *argv[])
 	
 	//复制源文件到目标文件中
 	while(fgets(string, 81, input) != NULL)
-		fputs(string, output);	
+		fputs(string, output);
+		
+	fclose(input);				//关闭源文件 
+	fclose(output);				//关闭目标文件 
 }
