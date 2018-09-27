@@ -18,10 +18,17 @@ void main(int argc, char *argv[])
 		exit(0);
 	 } 
 	 
-	for( ; (ch = getchar(()) != '@' ; )
+	for( ; (ch = getchar()) != '@' ; )
 	{
 		fputc(ch, fp1);							//输入字符并存储到文件中 
 	}
+	fclose(fp1);								//关闭文件
+	
+	//顺序输出文件的内容
+	fp2 = fopen(argv[1], "rt");
+	for( ; (ch = fgetc(fp2) != EOF) ; )
+		putchar(ch);							//顺序读入并显示 
+	fclose(fp2);								//关闭打开的文件 
 	
 	
 	
