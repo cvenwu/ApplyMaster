@@ -19,7 +19,16 @@ int dif(int x, int y, int z)	//求三数中的最大值与最小值的差
 	return (max(x, y, z) - min(x, y, z)); 
 }
 
-int max(int x, int y, int z)
+int max(int x, int y, int z)	//求三个数的最大值 
 {
-	
+	int r;
+	r = x > y ? x : y;
+	return (r > z ? r : z);
+}
+
+int min(int x, int y, int z)	//求三个数的最小值 
+{
+	int r;
+	r = x < y ? x : y;
+	return (r < z ? r : z); 
 }
