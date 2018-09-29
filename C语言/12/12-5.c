@@ -1,37 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <memory.h>
 
-void main(int argc, char *argv[])
+void main()
 {
-	FILE *input, *output;	//input:源文件指针 output:目标文件指针
-	char string[81];	
+	FILE *fp;
+	short i, a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	
-	
-	if(argc != 3)			//参数个数不对
+	fp = fopen("wang.dat", "wb");
+	if(fp == NULL)
 	{
-		printf("the number of arguments not correct\n");
-		printf("\n Usage: 可执行文件名 source-file dest-file");
-		exit(0); 
-	}
-	
-	if( (input = fopen(argv[1], "r")) == NULL )		//打开源文件失败 
-	{
-		printf("can not open source file\n");
+		printf("cann't create file : wang.txt\n");
 		exit(0);
 	}
 	
-	if( (output = fopen(argv[2], "w")) == NULL)		//创建目标文件失败
+	fwrite(a, sizeof(short), 10, fp);				//将数组的10个整型数写入到文件中
+	fclose(fp);
+	
+	
+	fp = fopen("wang.dat", "rb"); 					//打开二进制文件wang.bat
+	if(fp == NULL)
 	{
-		printf("can not create destination file\n");
+		printf("can not open file: wang.dat\n");
 		exit(0);
 	}
 	
-	//复制源文件到目标文件中
-	while(fgets(string, 81, input) != NULL)
-		fputs(string, output);
-		
-	fclose(input);			//关闭源文件 
-	fclose(output); 		//关闭目标文件 
+	memset(a, 0, 10 * sizeof(short));				//将数组a的10个元素清0
+	fread(a, sizeof(short), 10, fp);				//从文件中读取10个整型数据到数组a
+	fclose(fp);										//关闭文件
+	
+	
+	for(i = 0; i < 10; i++)							//显示数组a的元素 
+		printf("%d", a[i]);							 
 }
-
-
