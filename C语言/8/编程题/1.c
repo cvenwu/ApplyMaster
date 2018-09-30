@@ -17,7 +17,6 @@ void main()
 int isPrimeNumber(int num)
 {
 	int i;
-	printf("%f\n", sqrt(num));
 	for(i = 2; i <= sqrt(num); i++)
 		if(num % i == 0)
 			return 0;
