@@ -1,6 +1,4 @@
 /*
-
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -35,13 +33,11 @@ void main()
 	
 	printf("i=%2d,f=%6.2f\n", i, f);	//显示从文件中读取的变量i和f的值 
 }
-
-
 */
 
 
 #include <stdio.h>
-#include <stlib.h>
+#include <stdlib.h>
 #include <memory.h>
 
 #define NUM 10
@@ -72,7 +68,9 @@ void main()
 	
 	i = 0;
 	f = 0;
-	fscanf(fp, "%d, %f", &i, &f);
+//	fscanf(fp, "%d, %f", &i, &f);
+	//思考题答案： 
+	fscanf(fp, "%d%f", &i, &f);
 	fclose(fp);
 	
 	printf("i = %2d, f = %6.2f\n", i, f);		

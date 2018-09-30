@@ -8,9 +8,9 @@ int min(int x, int y, int z);
 void main()
 {
 	int a, b, c, d;
-	scanf("%d%d%d%d", &a, &b, &c, &d);
+	scanf("%d%d%d", &a, &b, &c);
 	
-	d = dif(a, b, c, d);
+	d = dif(a, b, c);
 	printf("Max - Min = %d\n", d);
 }
 
