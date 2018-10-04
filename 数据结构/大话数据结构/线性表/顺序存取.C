@@ -27,7 +27,7 @@ Status GetElem(SqList L, int i, ElemType *e)
 }
 
 /*插入操作*/
-/*初始条件：顺序线性表已经存在, 1<=i<=ListLength(L)*/
+/*初始条件：顺序线性表已    经存在, 1<=i<=ListLength(L)*/
 /*操作结果：在L中第i个位置之前插入新的数据元素e,L的长度加1*/
 Status ListInsert(SqList *L, int i, ElemType e)
 {
@@ -56,7 +56,7 @@ Status ListInsert(SqList *L, int i, ElemType e)
 Status ListDelete(SqList *L, int i, ElemType *e)
 {
     int k;
-    if(L->length==0)                                        /*线性表为空*/
+    if(L->length == 0)                                        /*线性表为空*/
         return ERROR;
 
 
@@ -66,22 +66,17 @@ Status ListDelete(SqList *L, int i, ElemType *e)
     *e = L->data[i-1];
     if(i < L->length)                                       /*如果删除不是最后位置*/
     {
-        for(k=i; k<L->length; k++)                          /*将删除位置后继元素前移*/
-            L->data[k-1]=L->data[k];
+        for(k = i; k < L->length; k++)                          /*将删除位置后继元素前移*/
+            L->data[k-1] = L->data[k];
     }
 
     L->length--;
     return OK;
 }
 
-
-
-int main()
+int main(int argc, char const *argv[])
 {
-
-    int a = 3;
-    printf("%d\n", a);
-    printf("Hello World!\n");
-
+    printf("Hello World1\n");
     return 0;
 }
+
