@@ -27,7 +27,7 @@ Status GetElem(SqList L, int i, ElemType *e)
 }
 
 /*插入操作*/
-/*初始条件：顺序线性表已    经存在, 1<=i<=ListLength(L)*/
+/*初始条件：顺序线性表已经存在, 1<=i<=ListLength(L)*/
 /*操作结果：在L中第i个位置之前插入新的数据元素e,L的长度加1*/
 Status ListInsert(SqList *L, int i, ElemType e)
 {
