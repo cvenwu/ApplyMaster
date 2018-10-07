@@ -1,11 +1,12 @@
 #include <stdio.h>
+typedef int ElemType;
 #define Status int
 #define FALSE 0
 #define TRUE 1
 #define OK 1
 #define ERROR 0
 #define MaxSize 10
-#define ElemType int
+
 
 /*
 InitList(&L)            初始化表，构造一个空的线性表
