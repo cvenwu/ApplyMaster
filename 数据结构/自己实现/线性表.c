@@ -7,7 +7,6 @@
 #define MaxSize 10
 #define ElemType int
 
-
 /*
 InitList(&L)            初始化表，构造一个空的线性表
 Length(L)               求表长，返回线性表L的长度，也就是L中数据元素的个数
@@ -109,13 +108,16 @@ Status DestroyList(SeqList *l)
     return OK;
 }
 
-
-
 int main(int argc, char const *argv[])
 {
     SeqList *l;
-    InitList(l);
-    ListInsert(l, 1, 5);
+    printf("Hello World!\n");
+   	printf("%d\n", InitList(l));
+    printf("Hello World!\n");
+    int a = ListInsert(l, 1, 5);
+    printf("%d\n", a);
+    printf("Hello World!\n");
     PrintList(l);
+    printf("Hello World!\n");
     return 0;
 }

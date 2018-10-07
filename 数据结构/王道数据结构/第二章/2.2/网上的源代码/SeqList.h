@@ -1,4 +1,4 @@
-//#pragma once
+
 
 #define ListSize 100      //线性表的最大长度
 typedef int DataType;
