@@ -120,9 +120,10 @@ LinkList *LocateElem(LinkList *l, ElemType e)
 int GetListLength(LinkList *l)
 {
     printf("GetListLength2\n");
-    printf("Hello World!\n");
-    printf("%d\n", l->next == NULL);
     if(l->next == NULL)
+    {
+    	printf("Hello World!\n");
+	}
         return 0;
     printf("GetListLength2\n");
     int i = 1;
@@ -202,6 +203,7 @@ void main(int argc, char const *argv[])
 {
     /* code */
     printf("123\n");
+   	 
     LinkList *l;
     printf("123\n");
     InitLinkList(l);
