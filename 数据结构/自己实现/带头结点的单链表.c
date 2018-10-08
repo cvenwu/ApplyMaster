@@ -33,11 +33,15 @@ typedef struct LinkList{
 
 
 /*单链表的初始化*/
-void InitLinkList(LinkList *l)
+LinkList *InitLinkList(LinkList *l)
 {
     if((l = (LinkList *)malloc(sizeof(LinkList))) == NULL)
         printf("初始化内存失败!\n");
     l->next = NULL;
+
+    printf("%d", l);
+
+    return l;
 }
 
 /*判断单链表是否为空*/
@@ -120,6 +124,11 @@ LinkList *LocateElem(LinkList *l, ElemType e)
 int GetListLength(LinkList *l)
 {
     printf("GetListLength2\n");
+    printf("Hello World!\n");
+    printf("%d\n",l);
+    printf("Hello World!\n");
+    printf("%d\n",l->next);
+    printf("Hello World!\n");
     if(l->next == NULL)
     {
     	printf("Hello World!\n");
@@ -203,11 +212,11 @@ void main(int argc, char const *argv[])
 {
     /* code */
     printf("123\n");
-   	 
     LinkList *l;
     printf("123\n");
-    InitLinkList(l);
-    printf("123\n");
+    l = InitLinkList(l);
+    printf("He\n");
+    printf("%d\n", l);
     InsertNodeToLinkList(l, 1, 5);
     printf("123\n");
     PrintLinkList(l);

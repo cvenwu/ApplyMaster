@@ -26,12 +26,15 @@ typedef struct SeqList
     int length;
 }SeqList;
 
-Status InitList(SeqList *l)
+SeqList *InitList(SeqList *l)
 {
+	printf("%d\n", l);
     if(l == NULL)
-        return OK;
+        return NULL;
+    printf("%d\n", l);
     l->length = 0;
-    return OK;
+    printf("%d\n", l);
+    return l;
 }
 
 int Length(SeqList *l)
@@ -113,7 +116,7 @@ int main(int argc, char const *argv[])
 {
     SeqList *l;
     printf("Hello World!\n");
-   	printf("%d\n", InitList(l));
+    l = InitList(l);
     printf("Hello World!\n");
     int a = ListInsert(l, 1, 5);
     printf("%d\n", a);
