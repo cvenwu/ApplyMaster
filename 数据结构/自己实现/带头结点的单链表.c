@@ -63,7 +63,7 @@ void CreateFormHead(LinkList *l)
         printf("input a number : ");
         scanf("%d", x);
     }
-    
+
 }
 
 /*尾插法建表*/
@@ -95,7 +95,7 @@ LinkList *GetElem(LinkList *l, int i)
         return NULL;
     if(i == 0)
         return node;
-    
+
     node = node->next;
     while(i > j)
     {
@@ -110,7 +110,7 @@ LinkList *GetElem(LinkList *l, int i)
 LinkList *LocateElem(LinkList *l, ElemType e)
 {
     LinkList *node = l->next;
-    while(node != NULL && node->data != e)              
+    while(node != NULL && node->data != e)
         node = node->next;
 
     return node;
@@ -119,29 +119,33 @@ LinkList *LocateElem(LinkList *l, ElemType e)
 /*求链表的长度*/
 int GetListLength(LinkList *l)
 {
+    printf("GetListLength2\n");
+    printf("Hello World!\n");
+    printf("%d\n", l->next == NULL);
     if(l->next == NULL)
         return 0;
-
+    printf("GetListLength2\n");
     int i = 1;
     LinkList *node = l->next;
     while((node = node->next) != NULL)
         i++;
-    
+
     return i;
 }
 
 /*插入节点*/
 Status InsertNodeToLinkList(LinkList *l, int i, ElemType data)
 {
+    printf("InsertNodeToLinkList1\n");
+    int j = GetListLength(l);
+    printf("%d\n", j);
     //判断i是否合法
-    if(i <= 0 || i > GetListLength(l))
+    if(i <= 0 || i > GetListLength(l) + 1)                          //这里应该是i > GetListLength(l) + 1
         return FALSE;
-
-
     LinkList *node = (LinkList *)malloc(sizeof(LinkList));
     node->data = data;
     LinkList *prevNode = GetElem(l, i-1);
-    
+
     node->next = prevNode->next;
     prevNode->next = node;
     return TRUE;
@@ -186,17 +190,26 @@ void PrintLinkList(LinkList *l)
         printf("空表!\n");
         return;
     }
-        
+
     LinkList *node = l;
     while((node = node->next) != NULL)
         printf("%d\t", node->data);
-    
+
 }
 
 void main(int argc, char const *argv[])
 {
     /* code */
-    return 0;
+    printf("123\n");
+    LinkList *l;
+    printf("123\n");
+    InitLinkList(l);
+    printf("123\n");
+    InsertNodeToLinkList(l, 1, 5);
+    printf("123\n");
+    PrintLinkList(l);
+    printf("123\n");
+    return;
 }
 
 
