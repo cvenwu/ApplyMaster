@@ -14,7 +14,4 @@ Index(S, T, pos)                    串S和T存在，T是非空串，1<=pos<=Str
 Replace(S, T, V)                    串S，T和V存在，T是非空串，用V替换主串S中出现的所有与T相等的不重叠的子串
 StrInsert(S, pos, T)                串S和T存在，1<=pos<=StrLength(S)+1,在串S的第pos个字符之前插入串T
 StrDelete(S, pos, len)              串S存在，1<=pos<=StrLength(S)-len+1,从串S中删除第pos个字符起长度为len的子串
-
-
-
 */
