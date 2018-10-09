@@ -1,4 +1,6 @@
 #include <stdio.h>
+
+
 typedef int ElemType;
 #define Status int
 #define FALSE 0
@@ -6,6 +8,7 @@ typedef int ElemType;
 #define OK 1
 #define ERROR 0
 #define MaxSize 10
+
 
 
 /*
