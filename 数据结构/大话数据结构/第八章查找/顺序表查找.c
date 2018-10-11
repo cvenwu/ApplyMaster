@@ -106,7 +106,15 @@ int Fibonacci_Search(int *a, int n, int key)
         }
         else if(key > a[mid])               /*若查找记录大于当前分隔记录*/
         {
-            
+            low = mid + 1;                  /*最低下标调整到分隔下标mid+1处*/
+            k = k - 2;                      /*斐波那契数列减两位*/
+        }
+        else
+        {
+            if(mid <= n)
+                return mid;                 /*若相等则说明mid即为查找到的位置*/
+            else
+                return n;                   /*若mid>n说明是补全数值，返回n*/
         }
     }
 }
