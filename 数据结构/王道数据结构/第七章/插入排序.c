@@ -2,7 +2,8 @@
 
 #define ElemType int
 
-/*直接插入排序*/
+
+/*直接插入排序*//*
 void InsertSort(ElemType A[], int n)
 {
     int i, j;
@@ -14,7 +15,7 @@ void InsertSort(ElemType A[], int n)
                 A[j+1] = A[j];                          //向后挪位
             A[j+1] = A[0];                              //复制到插入位置
         }
-}
+}*/
 
 /*折半插入排序*/
 void InsertSort2(ElemType A[], int n)
