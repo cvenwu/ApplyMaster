@@ -122,13 +122,30 @@ void ShellSort(SqList *L)
         {
             if(L->r[i] < L->r[i-increment])
             {
-               /*需将L->r[i]插入有序增量子表*/
-               L->r[0] = L->r[i];               /*暂存在L->r[0]*/
-               for(j = i - increment; j > 0 && L->r[0] < L->r[j]; j -= increment)
-                     
+                /*需将L->r[i]插入有序增量子表*/
+                L->r[0] = L->r[i];               /*暂存在L->r[0]*/
+                for(j = i - increment; j > 0 && L->r[0] < L->r[j]; j -= increment)
+                    L->r[j + increment] = L->r[j];          /*记录后移，查找插入位置*/
+                L->r[j+increment] = L->r[0];                /*插入*/    
             }
         }
     }
+    while(increment > 1);
+}
+
+
+/*堆排序*/
+void HeapSort(SqList *L)
+{
+    int i;
+    for(i = L->length / 2; i > 0; i--)          /*把L中的r构建成一个大顶锥*/
+        HeapAdjust(L, i, L->length);
+
+    for(i = L->length; i > 1; i--)
+    {
+        swap(L, 1, i);                          /*将锥顶记录和当前未经排序子序列的最后一个记录进行交换*/
+        HeapAdjust(L, 1, i-1);                  /*将L->r[1...i-1]重新调整为大顶锥*/
+    }   
 }
 
 void main(int argc, char const *argv[])
