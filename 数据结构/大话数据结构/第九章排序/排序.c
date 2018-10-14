@@ -148,6 +148,25 @@ void HeapSort(SqList *L)
     }   
 }
 
+/*已知L->r[s..m]中记录的关键字除L->r[s]之外均满足堆的定义*/
+/*本函数调整L->r[s]的关键字，使L->r[s..m]成为一个大顶锥*/
+void HeapAdjust(SqList *L, int s, int m)
+{
+    int temp, j;
+    temp = L->r[s];
+    for(j = 2 * s; j <= m; j *= 2)                  /*沿关键字较大的孩子结点搜寻*/
+    {
+        if(j < m && L->r[j] < L->r[j + 1])          /*j为关键字中较大记录的下标*/
+            ++j;
+        if(temp >= L->r[j])
+            break;                                  /*rc应插入在位置s上*/
+        L->r[s] = L->r[j];
+        s = j;
+    }
+
+    L->r[s] = temp;                                 /*插入*/
+}
+
 void main(int argc, char const *argv[])
 {
     
