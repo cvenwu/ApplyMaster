@@ -19,6 +19,8 @@ int main(int argc, char const *argv[])
         }
         temp /= fact;
         if(flag % 2 == 0)
+        temp = 2;
+        
             sum -= temp;
         else
             sum += temp;
