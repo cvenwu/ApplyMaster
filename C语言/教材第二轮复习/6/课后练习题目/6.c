@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
     int flag = 1;
     printf("Please input the value of x : ");
     x = 1.57;
-    // scanf("%lf", &x);
+    scanf("%lf", &x);
     temp = x;
     while(fabs(temp) > 1e-5)
     {
@@ -19,20 +19,13 @@ int main(int argc, char const *argv[])
         }
         temp /= fact;
         if(flag % 2 == 0)
-        temp = 2;
-        
             sum -= temp;
         else
             sum += temp;
-
-
-        printf("%lf %lf %lf\n", temp, fact, sum);
-
-        sum += temp;
         i += 2;
         flag++;
     }
 
-    printf("%lf\n", sum);
+    printf("共统计了%d项, %lf\n", flag, sum);
     return 0;
 }

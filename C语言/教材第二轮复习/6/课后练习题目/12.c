@@ -12,9 +12,14 @@ int main(int argc, char const *argv[])
 
     for(line = 1; line <= 5; line++)
     {
-        printf
+        for(count = 5 - line; count >= 1; count--)
+            printf(" ");
+        printf("*****");
+        printf("\n");
     }
 
+
+    printf("\n");
     for(line = 1; line <= 5; line++)
     {
         for(count = 1; count <= (line - 1) * 2 + 1; count++)
