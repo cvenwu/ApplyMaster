@@ -1,0 +1,40 @@
+"E:\Clion\CLion 2018.2.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" F:\git仓库\ApplyMaster\C语言\Clion
+-- The C compiler identification is GNU 4.9.2
+-- Check for working C compiler: C:/Program Files/mingw-w64/x86_64-4.9.2-posix-seh-rt_v3-rev0/mingw64/bin/gcc.exe
+-- Check for working C compiler: C:/Program Files/mingw-w64/x86_64-4.9.2-posix-seh-rt_v3-rev0/mingw64/bin/gcc.exe -- broken
+CMake Error at E:/Clion/CLion 2018.2.5/bin/cmake/win/share/cmake-3.12/Modules/CMakeTestCCompiler.cmake:52 (message):
+  The C compiler
+
+    "C:/Program Files/mingw-w64/x86_64-4.9.2-posix-seh-rt_v3-rev0/mingw64/bin/gcc.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: F:/git浠撳簱/ApplyMaster/C璇█/Clion/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command:"C:/PROGRA~1/MINGW-~1/X86_64~1.2-P/mingw64/bin/mingw32-make.exe" "cmTC_f02df/fast"
+    C:/PROGRA~1/MINGW-~1/X86_64~1.2-P/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_f02df.dir\build.make CMakeFiles/cmTC_f02df.dir/build
+    mingw32-make.exe[1]: Entering directory 'F:/git浠撳簱/ApplyMaster/C璇█/Clion/cmake-build-debug/CMakeFiles/CMakeTmp'
+    Building C object CMakeFiles/cmTC_f02df.dir/testCCompiler.c.obj
+    C:\PROGRA~1\MINGW-~1\X86_64~1.2-P\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_f02df.dir\testCCompiler.c.obj   -c F:\git娴犳挸绨盶ApplyMaster\C鐠囶叀鈻圽Clion\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+    gcc.exe: error: F:\git娴犳挸绨盶ApplyMaster\C鐠囶叀鈻圽Clion\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+    gcc.exe: fatal error: no input files
+    compilation terminated.
+    CMakeFiles\cmTC_f02df.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_f02df.dir/testCCompiler.c.obj' failed
+    mingw32-make.exe[1]: *** [CMakeFiles/cmTC_f02df.dir/testCCompiler.c.obj] Error 1
+    mingw32-make.exe[1]: Leaving directory 'F:/git浠撳簱/ApplyMaster/C璇█/Clion/cmake-build-debug/CMakeFiles/CMakeTmp'
+    makefile:120: recipe for target 'cmTC_f02df/fast' failed
+    mingw32-make.exe: *** [cmTC_f02df/fast] Error 2
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "F:/git浠撳簱/ApplyMaster/C璇█/Clion/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "F:/git浠撳簱/ApplyMaster/C璇█/Clion/cmake-build-debug/CMakeFiles/CMakeError.log".

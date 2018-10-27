@@ -1,0 +1,18 @@
+Determining if the C compiler works failed with the following output:
+Change Dir: F:/git仓库/ApplyMaster/C语言/Clion/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/PROGRA~1/MINGW-~1/X86_64~1.2-P/mingw64/bin/mingw32-make.exe" "cmTC_f02df/fast"
+C:/PROGRA~1/MINGW-~1/X86_64~1.2-P/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_f02df.dir\build.make CMakeFiles/cmTC_f02df.dir/build
+mingw32-make.exe[1]: Entering directory 'F:/git仓库/ApplyMaster/C语言/Clion/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f02df.dir/testCCompiler.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.2-P\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_f02df.dir\testCCompiler.c.obj   -c F:\git浠撳簱\ApplyMaster\C璇█\Clion\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: F:\git浠撳簱\ApplyMaster\C璇█\Clion\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+CMakeFiles\cmTC_f02df.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_f02df.dir/testCCompiler.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_f02df.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'F:/git仓库/ApplyMaster/C语言/Clion/cmake-build-debug/CMakeFiles/CMakeTmp'
+makefile:120: recipe for target 'cmTC_f02df/fast' failed
+mingw32-make.exe: *** [cmTC_f02df/fast] Error 2
+
+
