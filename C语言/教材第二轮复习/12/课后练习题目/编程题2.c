@@ -3,42 +3,44 @@
  * 随命令行一起输入，输入时原有两文件的文件名在前，合并文件的文件名在后
  **/
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char const *argv[])
+void main(int argc, char const *argv[])
 {
-    printf("h\n");
-    FILE *source, *source2, *destin;
-    if((source = fopen(argv[1], "r")) == NULL)
+    FILE *source1, *source2, *dest;
+    if(argc != 4)
     {
-        printf("Open Source File Error!\n");
+        printf("Too few or more argumets!\n");
+        exit(0);
+    }
+
+    if((source1 = fopen(argv[1], "r")) == NULL)
+    {
+        printf("Open the first source file error!\n");
         exit(0);
     }
 
     if((source2 = fopen(argv[2], "r")) == NULL)
     {
-        printf("Open Source2 File Error!\n");
+        printf("Open the second source file error!\n");
         exit(0);
     }
 
-    if((source2 = fopen(argv[3], "w")) == NULL)
+    if((dest = fopen(argv[3], "w")) == NULL)
     {
-        printf("Open Destination File Error!\n");
+        printf("Open destination source file error!\n");
         exit(0);
     }
-    printf("hello world!\n");
+
     char string[1024];
-    while(fgets(string, 1023, source) != NULL || fgets(string, 1023, source2) != NULL)
-        fputs(string, destin);
     
-
-    fclose(source);
+    while(fgets(string, 1023, source1) != NULL)
+        fputs(string, dest);
+    fputs("\n", dest);
+    while(fgets(string, 1023, source2) != NULL)
+        fputs(string, dest);
+    fclose(source1);
     fclose(source2);
-    fclose(destin);
-
-
-    return 0;
-
+    fclose(dest);
 }

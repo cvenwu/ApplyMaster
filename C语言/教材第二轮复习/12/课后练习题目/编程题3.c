@@ -10,40 +10,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char const *argv[])
+void main(int argc, char const *argv[])
 {
     FILE *file;
-    int line = 1;
-
-    int m, n;
+    int m, n, i = 0;
+    if(argc == 2)
+        m = -1, n = -1;
+    else if(argc == 4)
+    {
+        m = atoi(argv[2]);
+        n = atoi(argv[3]);
+    }else{
+        printf("illegal arguments!\n");
+        exit(0);
+    }
     if((file = fopen(argv[1], "r")) == NULL)
     {
-        printf("Open File Error!\n");
+        printf("File Open Error!\n");
         exit(0);
     }
 
     char string[1024];
-
-    if(argc == 3)
+    if(m == -1 && n == -1)
     {
-        m = (int)argv[1];
-        n = (int)argv[2];
         while(fgets(string, 1023, file) != NULL)
-        {
-            line++;
-            if(line >= m && line <= n)
-                puts(string);
-        }
+            printf("%s", string);
     }else{
         while(fgets(string, 1023, file) != NULL)
         {
-            puts(string);
-            line++;
+            i++;
+            if(i >= m && i <= n)
+                printf("%s", string);
         }
     }
 
     fclose(file);
-
-    
-    return 0;
 }
+
