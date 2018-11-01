@@ -11,16 +11,22 @@
 #include <stdlib.h>
 int main(int argc, char const *argv[])
 {
-    if(argc != 2)
+    if(argc != 3)
     {
         printf("Too few or too more arguments!\n");
         exit(0);
     }
 
-    FILE *file;
+    FILE *file, *dest;
     if((file = fopen(argv[1], "r")) == NULL)
     {
         printf("Open File Error!\n");
+        exit(0);
+    }
+
+    if((dest = fopen(argv[2], "w+")) == NULL)
+    {
+        printf("Open dest File Error!\n");
         exit(0);
     }
 
@@ -35,11 +41,10 @@ int main(int argc, char const *argv[])
             temp = temp - 32;
         }
 
-
-        
+        fputc(temp, dest);
     }
 
-
-    
+    fclose(file);
+    fclose(dest);
     return 0;
 }

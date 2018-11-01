@@ -9,4 +9,49 @@
  * 选票，请编制一个程序来统计每个人的选票数，并把每个人的选票数输出到文件OUT.DAT中
  **/
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void main(int argc, char const *argv[])
+{
+    FILE *file, *dest;
+    int count[10], n;
+    char ch;
+    memset(count, 0, 10 * sizeof(int));
+    if((file = fopen("IN.DAT", "r")) == NULL)
+    {
+        printf("File Open Error!\n");
+        exit(0);
+    }
+
+    while((ch = fgetc(file)) != EOF)
+    {
+        n++;
+        if(count[n/10] >)
+        if(ch == '1')
+            count[n/10]++;
+    }
+
+    for(n = 0; n < 10; n++)
+        printf("%d\t", count[n]);
+    
+
+    if((dest = fopen("OUT.txt", "w+")) == NULL)
+    {
+        printf("Dest File Open Error!\n");
+        exit(0);
+    }
+
+    fputs(count, dest);
+
+    
+    fclose(file);
+    fclose(dest);
+
+
+}
+
+
+
+
 
