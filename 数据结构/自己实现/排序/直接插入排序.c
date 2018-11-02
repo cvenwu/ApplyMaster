@@ -22,6 +22,28 @@ void InsertSort(ElemType A[], int n)
 }
 
 
+void insertSort(ElemType Array[], int n)
+{
+    int i, j;
+    for(i = 2; i <= n; i++)
+    {
+        if(Array[i] < Array[i-1])
+        {
+            j = i-1;
+            Array[0] = Array[i];
+            while(Array[0] < Array[j] && j >= 1)
+            {
+                Array[j+1] = Array[j];
+                j--;
+            }
+            Array[j+1] = Array[0];
+        }
+        else
+            continue;
+    }
+}
+
+
 /*折半插入*/
 void BinaryInsertSort(ElemType A[], int n)
 {
@@ -68,6 +90,8 @@ void ShellSort(ElemType A[], int n)
 }
 
 
+
+
 /*
 void ShellSort(ElemType A[], int n)
 {
@@ -112,13 +136,14 @@ void ShellSort(ElemType A[], int n)
 void main(int argc, char const *argv[])
 {
     int a[] = { 0, 50, 10, 90, 30, 70, 40, 50, 60, 80};
-    BinaryInsertSort(a, 10);
+    insertSort(a, 9);
+    // BinaryInsertSort(a, 10);
     int b[] = { 0, 98, 36, -9, 0, 47, 23, 1, 8, 10, 7};
-    ShellSort(b, 11);
+    // ShellSort(b, 11);
     int i;
 
-    for(i = 0; i <= 10; i++)
-    	printf("%d\t", b[i]);
+    for(i = 0; i <= 9; i++)
+    	printf("%d\t", a[i]);
     printf("\n");/*
     for(i = 0; i <= 9; i++)
     	printf("%d\t", a[i]);
