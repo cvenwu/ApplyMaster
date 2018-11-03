@@ -1,17 +1,18 @@
-
-
 /*
-输入一个5行5列的数组，编程实现
-1. 求出对角线上各个元素的和
-2. 求出对角线上行、列下标均为偶数的各元素的积
+输入5行5列的数组
+1. 求出对角线上各元素的和
+2. 求出对角线上行、列下标均为偶数的各个元素的积
 3. 找出对角线上其值最大的元素和它在数组中的位置
 */
 
+
 #include <stdio.h>
+#include <stdlib.h>
 int main(int argc, char const *argv[])
 {
-    int num[5][5], i, j, sum = 0, max, temp, prac = 1;
-    printf("Please input the number of array[5][5]: ");
+    int num[5][5], sum = 0, product = 1, i, j, max;
+    
+    //数组赋值
     for(i = 0; i <= 4; i++)
         for(j = 0; j <= 4; j++)
             scanf("%d", &num[i][j]);
@@ -23,24 +24,17 @@ int main(int argc, char const *argv[])
             if(i == j)
             {
                 sum += num[i][j];
-                if(max < num[i][j])
-                {
-                    temp = i;
-                    max = num[i][j];
-                }
-
-                if(i % 2 == 0 && j % 2 == 0)
-                    prac *= num[i][j];
+                if(max < num[i][j]);
+                    max = i;
             }
-        }
-    
 
-    printf("sum : %d\n", sum);
-    printf("fact : %d\n", prac);
-    printf("max : %d, position : %d,%d\n", max, temp, temp);
-    
-    
-    
-    
+            if(i % 2 == 0 && j % 2 == 0)
+                product *= num[i][j];
+        }
+
+    printf("对角线上各元素的和: %d\n", sum);
+    printf("对角线上行、列下标均为偶数的各个元素的积: %d\n", product);
+    printf("对角线上其值最大的元素为: %d 位置是第%d行第%d列\n", num[i][j], i, j);
+
     return 0;
 }

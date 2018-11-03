@@ -1,16 +1,26 @@
-/*任意输入一个偶数，请将它分解为两个素数之和*/
+/*
+任意输入一个偶数，将它分解为两个素数之和
+*/
+
 #include <stdio.h>
 #include <math.h>
+
+int isPrimeNumber(int num)
+{
+    int i;
+    for(i = 2; i <= sqrt(num); i++)
+        if(num % i == 0)
+            return 0;
+            
+    return 1;
+}
+
 int main(int argc, char const *argv[])
 {
-    int num, i, j;
-    printf("Please input a even number : ");
-    scanf("%d", &num);
-    
-    for(i = 2; i < num-1; i++)
-        for(j = 2; j <= sqrt(i); j++)
-            printf("%d = %d + %d\n", num, i, num - i);
-
-
+    int even, i;
+    scanf("%d", &even);
+    for(i = 1; i < even; i++)
+        if(isPrimeNumber(i) && isPrimeNumber(even-i))
+            printf("%d = %d + %d\n", even, i, even-i);
     return 0;
 }
